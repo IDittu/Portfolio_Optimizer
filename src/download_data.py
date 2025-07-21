@@ -29,7 +29,7 @@ def download_prices(tickers=DEFAULT_TICKERS, start='2018-01-01', end=None):
     for ticker in tickers:
         try:
             print(f"  → {ticker}")
-            df = yf.download(ticker, start=start, end=end)
+            df = yf.download(ticker, start=start, end=end, auto_adjust=True)
             if df.empty:
                 print(f"    ⚠️ No data for {ticker}")
                 continue
